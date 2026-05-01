@@ -2,9 +2,10 @@
 
 /**
  * Choose a random intager between [min, max)
+ *
  * Assumes max > min
  * @param {number} min integer range lowerbound (inclusive)
- * @param {number} max integer range upperbound (exclusive by default)
+ * @param {number} max integer range upperbound (exclusive)
  * @returns random integer value in the range
  */
 function randomInRange(min, max) {
