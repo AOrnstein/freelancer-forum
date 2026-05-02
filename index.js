@@ -30,6 +30,14 @@ function makeFreelancer(name, occupation, rate) {
 
 const freelancers = Array.from({ length: NUM_FREELANCERS }, makeFreelancer);
 
+function averageRate() {
+  const total = freelancers.reduce(
+    (total, freelancer) => total + freelancer.rate,
+    0,
+  );
+  return total / freelancers.length;
+}
+
 // === Components ===
 
 // === Render ===
