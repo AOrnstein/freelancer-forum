@@ -28,6 +28,8 @@ function makeFreelancer(name, occupation, rate) {
   };
 }
 
+const freelancers = Array.from({ length: NUM_FREELANCERS }, makeFreelancer);
+
 // === Components ===
 
 // === Render ===
