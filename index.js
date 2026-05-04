@@ -51,11 +51,22 @@ function Freelancer(freelancer) {
   const $freelancer = document.createElement("li");
   $freelancer.classList.add("freelancer");
   $freelancer.innerHTML = `
-    <span class="freelancer-name">${freelancer.name}</span>
-    <span class="freelancer-occupation">${freelancer.occupation}</span>
-    <span class="freelancer-rate">${freelancer.rate}</span>
+    <span class="column freelancer-name">${freelancer.name}</span>
+    <span class="column freelancer-occupation">${freelancer.occupation}</span>
+    <span class="column freelancer-rate">${freelancer.rate}</span>
   `;
   return $freelancer;
+}
+
+function FreelancerHeader() {
+  const $header = document.createElement("li");
+  $header.classList.add("freelancer", "header");
+  $header.innerHTML = `
+    <span class="column freelancer-name">${"Name"}</span>
+    <span class="column freelancer-occupation">${"Occupation"}</span>
+    <span class="column freelancer-rate">${"Rate"}</span>
+  `;
+  return $header;
 }
 
 /**
@@ -67,6 +78,7 @@ function FreelancerList(freelancers) {
   const $freelancerList = document.createElement("ul");
   $freelancerList.classList.add("freelancers");
   const $freelancers = freelancers.map(Freelancer);
+  $freelancerList.append(FreelancerHeader());
   $freelancerList.append(...$freelancers);
   return $freelancerList;
 }
