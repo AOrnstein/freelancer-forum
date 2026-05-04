@@ -14,17 +14,14 @@ const NUM_FREELANCERS = 100;
 // === State ===
 
 /**
- * Make a new Freelancer, undefined properties will be randomized
- * @param {string|undefined} name
- * @param {string|undefined} occupation
- * @param {number|undefined} rate
+ * Make a new Freelancer
  * @returns {Freelancer}
  */
-function makeFreelancer(name, occupation, rate) {
+function makeFreelancer() {
   return {
-    name: name ?? randomInArray(NAMES),
-    occupation: occupation ?? randomInArray(OCCUPATIONS),
-    rate: rate ?? randomInRange(PRICE_RANGE.min, PRICE_RANGE.max),
+    name: randomInArray(NAMES),
+    occupation: randomInArray(OCCUPATIONS),
+    rate: randomInRange(PRICE_RANGE.min, PRICE_RANGE.max),
   };
 }
 
